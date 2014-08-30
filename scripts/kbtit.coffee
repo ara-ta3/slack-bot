@@ -23,3 +23,12 @@ module.exports = (robot) ->
     message = "```" + message + "```"
     msg.send message
 
+  robot.respond /DIE$/i, (msg) ->
+    msg.send "一体いつから`die`が使えると錯覚していた・・・？"
+
+  robot.respond /ECHO (.*)$/i, (msg) ->
+    input = msg.match[1]
+    if /なん[\.・]*だと[\.・]*/.test(input)
+      input = "なん・・・だと・・・\n http://mangakansou.com/wp-content/uploads/2014/05/2341.jpg"
+    msg.send input
+
