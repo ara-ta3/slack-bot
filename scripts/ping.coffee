@@ -10,9 +10,6 @@ module.exports = (robot) ->
   robot.respond /PING$/i, (msg) ->
     msg.send "PONG"
 
-  robot.respond /ADAPTER$/i, (msg) ->
-    msg.send robot.adapterName
-
   robot.respond /TIME$/i, (msg) ->
     msg.send "Server time is: #{new Date()}"
 
