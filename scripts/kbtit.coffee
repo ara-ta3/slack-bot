@@ -1,3 +1,10 @@
+# Description:
+#   心か・・・
+#
+# Commands:
+#   hubot bleach poem v{number}
+#
+
 fs = require 'fs'
 
 poem = fs.readFileSync 'kbtit-poem.json'
