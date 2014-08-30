@@ -15,5 +15,5 @@ module.exports = (robot) ->
 
 
   robot.respond /BLEACH AA (.*)$/i, (msg) ->
-    msg.send poem.aa[msg.match[1]]
+    msg.send "```"+ poem.aa[msg.match[1]] + "```"
 
