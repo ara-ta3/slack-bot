@@ -50,6 +50,6 @@ module.exports = (robot) ->
     if /なん[\.・]*だと[\.・]*/.test(input)
       input = "なん・・・だと・・・\n http://mangakansou.com/wp-content/uploads/2014/05/2341.jpg"
     if /心か/.test(input)
-      input = "```\n\n                心\n                か\n\n```"
+      input = "```\n\n\n\n\n\n                心\n                か\n\n\n\n\n\n```"
     msg.send input
 
