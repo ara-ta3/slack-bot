@@ -14,3 +14,6 @@ module.exports = (robot) ->
     msg.send poem.poem[msg.match[1]]
 
 
+  robot.respond /BLEACH AA (.*)$/i, (msg) ->
+    msg.send poem.aa[msg.match[1]]
+
