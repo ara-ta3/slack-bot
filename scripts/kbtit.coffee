@@ -2,7 +2,10 @@
 #   心か・・・
 #
 # Commands:
-#   hubot bleach poem v{number}
+#   hubot bleach poem v{number} - Reply back with poem of Volume <number>
+#   hubot bleach aa v{number} - Reply back with Ascii Art of Volume <number>
+#   hubot echo <text> - Reply back with <text>
+#   hubot die 死なぬ
 #
 
 fs = require 'fs'

@@ -2,11 +2,11 @@
 #   Allows Hubot to know many languages.
 #
 # Commands:
-#   hubot translate me <phrase> - Searches for a translation for the <phrase> and then prints that bad boy out.
-#   hubot translate me from <source> into <target> <phrase> - Translates <phrase> from <source> into <target>. Both <source> and <target> are optional
+#   hubot translate <phrase> - Searches for a translation for the <phrase> and then prints that bad boy out.
 
 languages =
   "en": "English",
+  "ja": "Japanese"
 
 getCode = (language,languages) ->
   for code, lang of languages
@@ -17,7 +17,7 @@ module.exports = (robot) ->
   pattern = new RegExp('translate?' +
                        '(.*)', 'i')
   robot.respond pattern, (msg) ->
-    term   = "\"#{msg.match[3]}\""
+    term   = "\"#{msg.match[1]}\""
     origin = 'auto'
     target = 'en'
     
@@ -42,8 +42,11 @@ module.exports = (robot) ->
           language =languages[parsed[2]]
           parsed = parsed[0] and parsed[0][0] and parsed[0][0][0]
           if parsed
-            if msg.match[2] is undefined
-              msg.send "#{term} is #{language} for #{parsed}"
+            if language is undefined
+              msg.send "No results"
             else
-              msg.send "The #{language} #{term} translates as #{parsed} in #{languages[target]}"
+              if msg.match[2] is undefined
+                msg.send "#{term} is #{language} for #{parsed}"
+              else
+                msg.send "The #{language} #{term} translates as #{parsed} in #{languages[target]}"
 
