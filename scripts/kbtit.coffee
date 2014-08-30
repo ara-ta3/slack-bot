@@ -40,10 +40,10 @@ module.exports = (robot) ->
 
   robot.respond /BLEACH AA$/i, (msg) ->
     key = random_key poem.aa
-    msg.send poem.aa[key]
+    msg.send "```" + poem.aa[key] + "```"
 
   robot.respond /DIE$/i, (msg) ->
-    msg.send "一体いつから`die`が使えると錯覚していた・・・？"
+    msg.send "一体いつから `die` が使えると錯覚していた・・・？"
 
   robot.respond /ECHO (.*)$/i, (msg) ->
     input = msg.match[1]
